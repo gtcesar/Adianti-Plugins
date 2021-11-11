@@ -1,6 +1,6 @@
 {
     "name": "costamarques/plugins",
-    "description": "PPlugins para Adianti Framework",
+    "description": "Plugins para Adianti Framework",
     "type": "library",
     "license": "MIT",
     "authors": [
