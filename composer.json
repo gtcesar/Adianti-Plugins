@@ -1,0 +1,16 @@
+{
+    "name": "costamarques/plugins",
+    "description": "PPlugins para Adianti Framework",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Augusto Cesar da Costa Marques",
+            "email": "gtcesar@hotmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Costamarques\\Plugins\\": "src"
+        }
