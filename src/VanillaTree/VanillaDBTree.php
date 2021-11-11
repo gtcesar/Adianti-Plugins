@@ -2,7 +2,6 @@
 namespace Costamarques\Plugins\Vanillatree;
 use Adianti\Widget\Base\TElement;
 use Adianti\Widget\Base\TScript;
-use Adianti\Widget\Base\TStyle;
 use Adianti\Database\TCriteria;
 /**
  * VanillaDBTree

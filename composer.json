@@ -14,3 +14,5 @@
         "psr-4": {
             "Costamarques\\Plugins\\": "src"
         }
+    }
+}
