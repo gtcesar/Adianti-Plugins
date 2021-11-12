@@ -16,8 +16,6 @@ use Adianti\Widget\Base\TStyle;
 use Adianti\Database\TCriteria;
 use Adianti\Widget\Wrapper\AdiantiDatabaseWidgetTrait;
 
-use Exception;
-
 /**
  * Class Constructor
  * @param  $tagname tag name
