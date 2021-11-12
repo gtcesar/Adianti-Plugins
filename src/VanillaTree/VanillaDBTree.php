@@ -75,7 +75,7 @@ class VanillaDBTree extends TElement
     public function show()
     {
         $collapsed = $this->collapsed ? 'true' : 'false';
-        $contante = $this->id;
+        $constante = $this->id;
 
         // creates the script element
         $script = new TElement('script');
@@ -91,7 +91,7 @@ class VanillaDBTree extends TElement
                 '  = document.querySelector(' .
                 "'{$this->tagname}'" .
                 ');
-        const '.$contante.' = new VanillaTree(' .
+        const '.$constante.' = new VanillaTree(' .
                 "{$this->tagname}" .
                 ');         
         '
@@ -104,7 +104,7 @@ class VanillaDBTree extends TElement
            $parentkey = $item->{$this->parentkey};
 
 
-            $tree = "{$contante}.add({label: '{$label}',";
+            $tree = "{$constante}.add({label: '{$label}',";
 
             if ($parentkey != null) {
                 $tree .= "parent: '{$parentkey}',";
