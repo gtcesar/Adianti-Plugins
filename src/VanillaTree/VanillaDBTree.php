@@ -73,7 +73,7 @@ class VanillaDBTree extends TElement
     public function show()
     {
     	$include = new TElement('script');    	
-    	$include->src = "vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.js";
+    	$include->src = 'vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.js';
     	$include->type = 'text/javascript';
     	parent::add($include);
 
