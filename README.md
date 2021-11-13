@@ -26,11 +26,31 @@ Rode o comando
 
 
 ## Exemplo de uso - VanillaDBTree
+```sql
+CREATE TABLE IF NOT EXISTS `segmento` (
+  `id` int(11) NOT NULL,
+  `segmento_id` int(11) DEFAULT NULL,
+  `descricao` varchar(200) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `segmento` (`id`, `segmento_id`, `descricao`) VALUES
+(1, NULL, 'Transporte'),
+(2, 1, 'Executivo'),
+(3, 1, 'Fracionado'),
+(4, NULL, 'Informática'),
+(5, 4, 'Software'),
+(6, 4, 'Suporte e manutenção'),
+(7, NULL, 'Varejo'),
+(8, 7, 'Materiais de limpeza'),
+(16, 8, 'Químicos'),
+(17, 16, 'Controlados');
+
+```
 ```php
 
 use Costamarques\Plugins\VanillaTree\VanillaDBTree;
 
-class SeuController extends TPage
+class SegmentoForm extends TPage
 {
     /**
      * Class constructor
@@ -41,13 +61,13 @@ class SeuController extends TPage
         parent::__construct();
         
         // creates a panel
-        $panel = new TPanelGroup('NOME_PAINEL');
+        $panel = new TPanelGroup('Segmentos');
        
-        $arvore = new VanillaDBTree('NOME_OBJETO', 'DATABASE', 'MODEL', 'ID', 'ID_REFERENCIA', 'LABEL', 'ORDER', ' CRITERIA');
-        $arvore->collapse();
-        $arvore->setItemAction(new TAction(array('CLASSE', 'METODO')));
+        $segmentos = new VanillaDBTree('segmento', 'DATABASE', 'Segmento', 'id', 'segmento_id', 'descricao', 'id asc');
+        $segmentos->collapse();
+        $segmentos->setItemAction(new TAction(array($this, 'onSelect')));
         
-        $panel->add($arvore);
+        $panel->add($segmentos);
         
         // wrap the page content using vertical box
         $vbox = new TVBox;
@@ -57,6 +77,10 @@ class SeuController extends TPage
         parent::add($vbox);
     }
     
+    public function onSelect($param)
+    {
+        new TMessage('info', str_replace(',', '<br>', json_encode($param)));
+    }    
 
 }
 ```
