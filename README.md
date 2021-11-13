@@ -1,5 +1,7 @@
-# Adianti-Plugins
-Plugins para Adianti Framework
+# Adianti-Plugins <img src="https://img.shields.io/badge/Versão-0.0.4-green"> <img src="https://img.shields.io/badge/Licença-MIT-success"> <img src="https://img.shields.io/badge/Adianti-7.x-blue"> <img src="https://img.shields.io/badge/PHP-7.x-blueviolet">
+
+> Plugins para Adianti Framework
+
 
 ## Componentes disponíveis
  
