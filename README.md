@@ -4,7 +4,15 @@ Plugins para Adianti Framework
 Esse componente faz uso da lib Vanillatree https://github.com/finom/vanillatree
 
 ## Instalação
+Rode o comando
 `composer require costamarques/plugins`
+
+Importe para suas libraries(app/templates/{$theme}/libraries.html)
+    
+    <!-- Vanillatree -->
+    <script src="vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.js" type="text/javascript"></script>
+    <link href="vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.css" rel="stylesheet" type="text/css" media="screen">
+
 
 ## Exemplo de uso
 ```php
