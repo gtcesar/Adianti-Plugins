@@ -11,7 +11,6 @@
 namespace Costamarques\Plugins\Vanillatree;
 
 use Adianti\Widget\Base\TElement;
-use Adianti\Widget\Base\TScript;
 use Adianti\Widget\Wrapper\AdiantiDatabaseWidgetTrait;
 
 /**
@@ -27,13 +26,13 @@ use Adianti\Widget\Wrapper\AdiantiDatabaseWidgetTrait;
  */
 class VanillaDBTree extends TElement
 {
+    protected $items;
     private $tagname;
     private $itemAction;
     private $collapsed;
     private $key;
     private $label;
     private $parentkey;
-    protected $items;
 
     /**
      * Class Constructor
@@ -72,7 +71,7 @@ class VanillaDBTree extends TElement
      */
     public function show()
     {
-       
+
         $collapsed = $this->collapsed ? 'true' : 'false';
         $constante = $this->id;
 
@@ -84,23 +83,23 @@ class VanillaDBTree extends TElement
         parent::add($output);
 
         $script->add(
-            '        
-        $(document).ready(function(){ const ' .
-                $this->tagname .
-                '  = document.querySelector(' .
-                "'{$this->tagname}'" .
-                ');
-        const '.$constante.' = new VanillaTree(' .
-                "{$this->tagname}" .
-                ');         
+            '
+            $(document).ready(function(){ const ' .
+            $this->tagname .
+            '  = document.querySelector(' .
+            "'{$this->tagname}'" .
+            ');
+                const ' . $constante . ' = new VanillaTree(' .
+            "{$this->tagname}" .
+            ');
         '
         );
 
         foreach ($this->items as $item) {
-           
-           $key = $item->{$this->key};
-           $label = $item->{$this->label};
-           $parentkey = $item->{$this->parentkey};
+
+            $key = $item->{$this->key};
+            $label = $item->{$this->label};
+            $parentkey = $item->{$this->parentkey};
 
 
             $tree = "{$constante}.add({label: '{$label}',";
@@ -114,24 +113,23 @@ class VanillaDBTree extends TElement
             $script->add($tree);
         }
 
-        if ($this->itemAction)
-        {
+        if ($this->itemAction) {
             $string_action = $this->itemAction->serialize(FALSE);
             $script->add('
-
-            '.$this->tagname.'.addEventListener("vtree-select", function(evt) {
-                __adianti_load_page("index.php?'. $string_action .'&key=" + evt.detail.id);
-            });    
+            ' . $this->tagname . '.addEventListener("vtree-select", function(evt) {
+                __adianti_load_page("index.php?' . $string_action . '&key=" + evt.detail.id);
+            });
             ');
         }
 
-        $script->add('    
-        });  
+        $script->add('
+        });
         ');
 
-        parent::add($script);     
+        parent::add($script);
 
         parent::show();
     }
 }
+
 ?>
