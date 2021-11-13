@@ -3,7 +3,7 @@
 /**
  * VanillaDBTree
  *
- * @version    v0.0.3
+ * @version    v0.0.4
  * @author     Augusto César da Costa Marques
  * @copyright  Copyright (c) 2021 Augusto César da Costa Marques
  * @license    MIT License
@@ -11,6 +11,7 @@
 namespace Costamarques\Plugins\Vanillatree;
 
 use Adianti\Widget\Base\TElement;
+use Adianti\Widget\Base\TStyle;
 use Adianti\Widget\Wrapper\AdiantiDatabaseWidgetTrait;
 
 /**
@@ -71,6 +72,10 @@ class VanillaDBTree extends TElement
      */
     public function show()
     {
+    	$include = new TElement('script');    	
+    	$include->src = "vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.js";
+    	$include->type = 'text/javascript';
+    	parent::add($include);
 
         $collapsed = $this->collapsed ? 'true' : 'false';
         $constante = $this->id;
@@ -127,6 +132,8 @@ class VanillaDBTree extends TElement
         ');
 
         parent::add($script);
+        
+        TStyle::importFromFile('vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.css');
 
         parent::show();
     }
