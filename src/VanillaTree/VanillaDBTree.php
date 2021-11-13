@@ -12,7 +12,6 @@ namespace Costamarques\Plugins\Vanillatree;
 
 use Adianti\Widget\Base\TElement;
 use Adianti\Widget\Base\TScript;
-use Adianti\Widget\Base\TStyle;
 use Adianti\Widget\Wrapper\AdiantiDatabaseWidgetTrait;
 
 /**
@@ -130,11 +129,8 @@ class VanillaDBTree extends TElement
         });  
         ');
 
-        parent::add($script);
-        
-        TStyle::importFromFile('vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.css');
-        TScript::importFromFile('vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.js');
-        
+        parent::add($script);     
+
         parent::show();
     }
 }
