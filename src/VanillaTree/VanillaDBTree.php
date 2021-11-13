@@ -3,7 +3,7 @@
 /**
  * VanillaDBTree
  *
- * @version    v0.0.4
+ * @version    v0.0.5
  * @author     Augusto César da Costa Marques
  * @copyright  Copyright (c) 2021 Augusto César da Costa Marques
  * @license    MIT License
@@ -73,7 +73,7 @@ class VanillaDBTree extends TElement
     public function show()
     {
     	$include = new TElement('script');    	
-    	$include->src = 'vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.js';
+    	$include->src = 'vendor/costamarques/plugins/src/VanillaTree/js/vanillatree.min.js';
     	$include->type = 'text/javascript';
     	parent::add($include);
 
@@ -133,7 +133,7 @@ class VanillaDBTree extends TElement
 
         parent::add($script);
         
-        TStyle::importFromFile('vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.css');
+        TStyle::importFromFile('vendor/costamarques/plugins/src/VanillaTree/css/vanillatree.min.css');
 
         parent::show();
     }
