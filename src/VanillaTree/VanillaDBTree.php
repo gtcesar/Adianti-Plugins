@@ -73,9 +73,7 @@ class VanillaDBTree extends TElement
      */
     public function show()
     {
-        TStyle::importFromFile('vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.css');
-        TScript::importFromFile('vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.js');
-        
+       
         $collapsed = $this->collapsed ? 'true' : 'false';
         $constante = $this->id;
 
@@ -133,6 +131,10 @@ class VanillaDBTree extends TElement
         ');
 
         parent::add($script);
+        
+        TStyle::importFromFile('vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.css');
+        TScript::importFromFile('vendor/costamarques/plugins/src/VanillaTree/vanillatree.min.js');
+        
         parent::show();
     }
 }
