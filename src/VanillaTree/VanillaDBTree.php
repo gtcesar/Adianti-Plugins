@@ -12,6 +12,7 @@ namespace Costamarques\Plugins\Vanillatree;
 
 use Adianti\Widget\Base\TElement;
 use Adianti\Widget\Base\TStyle;
+use Adianti\Database\TCriteria;
 use Adianti\Widget\Wrapper\AdiantiDatabaseWidgetTrait;
 
 /**
