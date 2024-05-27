@@ -1,4 +1,17 @@
-# Adianti-Plugins <img src="https://img.shields.io/badge/Versão-0.0.5-green"> <img src="https://img.shields.io/badge/Licença-MIT-success"> <img src="https://img.shields.io/badge/Adianti-7.x-blue"> <img src="https://img.shields.io/badge/PHP-7.x-blueviolet">
+## Aviso
+
+Este projeto foi desativado e não está mais sendo mantido. Decidimos descontinuar o desenvolvimento deste componente em favor de uma solução mais atualizada e abrangente.
+
+A partir de agora, recomendamos o uso do pacote [gtcesar/recursive-db-tree](https://github.com/gtcesar/recursive-db-tree) como alternativa. Este pacote oferece recursos mais recentes e estáveis para suas necessidades de manipulação de árvores de banco de dados.
+
+Agradecemos a todos os usuários que contribuíram e apoiaram este projeto ao longo dos anos. Esperamos que você encontre o pacote recomendado útil para suas futuras necessidades de desenvolvimento.
+
+Se você tiver alguma dúvida ou precisar de assistência adicional, sinta-se à vontade para entrar em contato conosco.
+
+Atenciosamente,
+Equipe de Desenvolvimento
+
+## Adianti-Plugins <img src="https://img.shields.io/badge/Versão-0.0.5-green"> <img src="https://img.shields.io/badge/Licença-MIT-success"> <img src="https://img.shields.io/badge/Adianti-7.x-blue"> <img src="https://img.shields.io/badge/PHP-7.x-blueviolet">
 
 > Plugins para Adianti Framework
 
